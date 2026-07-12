@@ -13,7 +13,7 @@ const winnerText = document.getElementById('winner-text');
 const audioClick = document.getElementById('audio-click');
 const audioFlip = document.getElementById('audio-flip');
 const audioWrong = document.getElementById('audio-wrong');
-const audioWrong = document.getElementById('audiowrong');
+const audioMatch = document.getElementById('audio-match');
 const audioWin = document.getElementById('audio-win');
 
 // गेम व्हेरिएबल्स
