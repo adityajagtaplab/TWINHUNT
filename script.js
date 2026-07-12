@@ -140,9 +140,9 @@ function checkMatch() {
     if (card1.dataset.id === card2.dataset.id) {
         // MATCH ZALA!
         setTimeout(() => {
-            playSound(audioWrong);
+            playSound(audioMatch);
             triggerStarAnimation();
-            
+        }
             // पॉईंट्स देणे
             if (activePlayer === 1) {
                 p1Score++;
