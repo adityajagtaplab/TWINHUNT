@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Hunt - Memory Match Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="start-screen" class="screen active">
+        <div class="start-content">
+            <h1 class="game-title">Twin Hunt</h1>
+            <button id="start-btn" class="game-btn">START GAME</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="scoreboard top-scoreboard">
+            <div class="score-info">
+                <span class="player-name">Player 2</span>
+                <span id="p2-score" class="score-digits">0</span>
+            </div>
+            <div id="p2-stars" class="star-container"></div>
+        </div>
+
+        <div id="turn-indicator" class="turn-text">Player 1 Turn</div>
+
+        <div id="card-grid" class="grid-container"></div>
+
+        <div class="scoreboard bottom-scoreboard">
+            <div class="score-info">
+                <span class="player-name">Player 1</span>
+                <span id="p1-score" class="score-digits">0</span>
+            </div>
+            <div id="p1-stars" class="star-container"></div>
+        </div>
+    </div>
+
+    <div id="winner-screen" class="screen hide-winner">
+        <div class="winner-content">
+            <h1 id="winner-text" class="win-message">Player 1 Won<br><span class="points-text">by 2 points</span></h1>
+            <div class="winner-buttons">
+                <button id="play-again-btn" class="game-btn">PLAY AGAIN</button>
+                <button id="exit-btn" class="game-btn">EXIT</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-click" src="assets/click.mp3" preload="auto"></audio>
+    <audio id="audio-flip" src="assets/flip.mp3" preload="auto"></audio>
+    <audio id="audio-match" src="assets/match.mp3" preload="auto"></audio>
+    <audio id="audio-wrong" src="assets/wrong.mp3" preload="auto"></audio>
+    <audio id="audio-win" src="assets/win.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
