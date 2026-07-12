@@ -142,7 +142,7 @@ function checkMatch() {
         setTimeout(() => {
             playSound(audioMatch);
             triggerStarAnimation();
-        }
+        
             // पॉईंट्स देणे
             if (activePlayer === 1) {
                 p1Score++;
