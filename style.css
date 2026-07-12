@@ -301,10 +301,60 @@ body, html {
         font-size: 1.1rem;
     }
     /* ४ कॉलम आणि ५ रो बरोबर बसण्यासाठी ग्रिड मॅनेजमेंट */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+    height: 55vh;
+    max-height: 480px; /* मोबाईलवर जास्त वाढू नये म्हणून लिमिट */
+    padding: 5px;
+    z-index: 5; /* स्कोअरबोर्डपेक्षा मागे ठेवण्यासाठी */
+}
+
+
+/* २. लॅपटॉप आणि मोठ्या स्क्रीनसाठी (जेव्हा स्क्रीन खूप आडवी असते) */
+/* १. मोबाईल स्क्रीनसाठी ओव्हरलॅप फिक्स */
+@media (max-width: 480px) {
+    #game-screen {
+        padding: 10px 5px; /* पॅडिंग कमी केली */
+    }
+    .game-title {
+        font-size: 2.5rem;
+    }
+    .game-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    .scoreboard {
+        width: 120px;
+        height: 55px;
+        z-index: 20; /* स्कोअरबोर्ड नेहमी कार्ड्सच्या वर आणि सुरक्षित राहील */
+    }
+    .top-scoreboard {
+        border-radius: 0 0 80px 80px;
+    }
+    .bottom-scoreboard {
+        border-radius: 80px 80px 0 0;
+    }
+    .score-digits {
+        font-size: 1.2rem;
+    }
+    .player-name {
+        font-size: 0.8rem;
+    }
+    .turn-text {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+    /* कार्ड्स ओव्हरलॅप होऊ नये म्हणून साईझ अजून ॲडजस्ट केली */
     .grid-container {
-        max-width: 90vw;
-        height: 55vh;
-        gap: 6px;
+        max-width: 85vw;
+        height: 50vh;
+        max-height: 380px; 
+        gap: 5px;
     }
     .card-inner {
         border-radius: 6px;
@@ -314,30 +364,5 @@ body, html {
     }
     .points-text {
         font-size: 1.4rem;
-    }
-}
-
-/* २. लॅपटॉप आणि मोठ्या स्क्रीनसाठी (जेव्हा स्क्रीन खूप आडवी असते) */
-@media (min-width: 1024px) {
-    .grid-container {
-        max-width: 450px; /* जास्त पसरू नये म्हणून लिमिट */
-        height: 65vh;
-        gap: 12px;
-    }
-    .scoreboard {
-        width: 200px;
-        height: 90px;
-    }
-    .top-scoreboard {
-        border-radius: 0 0 120px 120px;
-    }
-    .bottom-scoreboard {
-        border-radius: 120px 120px 0 0;
-    }
-    .score-digits {
-        font-size: 2rem;
-    }
-    .game-title {
-        font-size: 4.5rem;
     }
 }
