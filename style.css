@@ -84,7 +84,7 @@ body, html {
     flex-direction: column;
     justify-content: space-between; /* वर, मधे आणि खाली जागा समान वाटली जाईल */
     align-items: center;
-    padding: 15px 0;
+    padding: 30px 0;
     height: 100%;
     width: 100%;
     position: relative;
@@ -112,14 +112,14 @@ body, html {
     border-radius: 0 0 100px 100px;
     border-top: none;
     align-items: flex-start;
-    padding-top: 9px;
+    padding-top: 0px;
 }
 
 .bottom-scoreboard {
     border-radius: 100px 100px 0 0;
     border-bottom: none;
     align-items: flex-end;
-    padding-bottom: 9px;
+    padding-bottom: 0px;
 }
 
 .score-info {
