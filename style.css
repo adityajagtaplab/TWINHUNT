@@ -44,7 +44,7 @@ body, html {
 
 /* १. START SCREEN */
 #start-screen {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background.png') no-repeat center center/cover;
 }
 
 .start-content {
@@ -79,7 +79,7 @@ body, html {
 
 /* २. MAIN GAME SCREEN */
 #game-screen {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background2.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background2.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* वर, मधे आणि खाली जागा समान वाटली जाईल */
