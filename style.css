@@ -79,23 +79,29 @@ body, html {
 
 /* २. MAIN GAME SCREEN */
 #game-screen {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background2.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* वर, मधे आणि खाली जागा समान वाटली जाईल */
+    justify-content: flex-start;
     align-items: center;
-    padding: 30px 0;
-    height: 100%;
-    width: 100%;
-    position: relative;
+    padding: 0;
 }
 
+/* हेडर लेआउट - डावीकडे, मध्यभागी आणि उजवीकडे सेट करण्यासाठी */
+.game-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 10px;
+    height: 90px;
+}
 
-/* हाफ सर्कुलर स्कोअरबोर्ड */
+/* नवीन हाफ-सर्कुलर स्कोअरबोर्ड डिझाईन (कोपऱ्यांसाठी) */
 .scoreboard {
     position: relative;
-    width: 180px;
-    height: 60px;
+    width: 90px;
+    height: 75px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -108,47 +114,103 @@ body, html {
     z-index: 10;
 }
 
-.top-scoreboard {
-    border-radius: 0 0 100px 100px;
+/* डाव्या स्कोअरबोर्डचा कर्व */
+.left-scoreboard {
+    border-radius: 0 0 80px 0;
     border-top: none;
-    align-items: flex-start;
-    padding-top: 10px;
+    border-left: none;
 }
 
-.bottom-scoreboard {
-    border-radius: 100px 100px 0 0;
-    border-bottom: none;
-    align-items: flex-end;
-    padding-bottom: 10px;
+/* उजव्या स्कोअरबोर्डचा कर्व */
+.right-scoreboard {
+    border-radius: 0 0 0 80px;
+    border-top: none;
+    border-right: none;
 }
 
 .score-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5px;
 }
 
 .player-name {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .score-digits {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 900;
     color: #ffd700;
 }
 
-/* टर्न इंडिकेटर ॲनिमेशन */
 .turn-text {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    margin: 8px 0;
-    animation: pulse 0.4s infinite alternate;
+    margin-top: 25px; /* मध्यभागी आणण्यासाठी */
+    animation: pulse 1.5s infinite alternate;
 }
+
+/* ग्रिड आता खाली सुरक्षित राहील */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    width: 92%;
+    max-width: 360px;
+    height: 65vh;
+    margin-top: 15px;
+    margin-bottom: auto;
+}
+
+/* --- MOBILE & LAPTOP RESPONSIVE FOR NEW LAYOUT --- */
+@media (max-width: 480px) {
+    .game-header {
+        height: 75px;
+        padding: 0 5px;
+    }
+    .scoreboard {
+        width: 75px;
+        height: 60px;
+    }
+    .player-name {
+        font-size: 0.75rem;
+    }
+    .score-digits {
+        font-size: 1.1rem;
+    }
+    .turn-text {
+        font-size: 0.95rem;
+        margin-top: 20px;
+    }
+    .grid-container {
+        height: 58vh;
+        gap: 6px;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-header {
+        max-width: 600px;
+        height: 110px;
+    }
+    .scoreboard {
+        width: 130px;
+        height: 90px;
+    }
+    .left-scoreboard { border-radius: 0 0 100px 0; }
+    .right-scoreboard { border-radius: 0 0 0 100px; }
+    .player-name { font-size: 1.1rem; }
+    .score-digits { font-size: 1.8rem; }
+    .turn-text { font-size: 1.6rem; margin-top: 30px; }
+    .grid-container { max-width: 420px; height: 62vh; }
+}
+
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
@@ -178,17 +240,6 @@ body, html {
     100% { transform: translate(var(--x), var(--y)) scale(1.5); opacity: 0; }
 }
 
-/* २० कार्ड्सचे ग्रिड (मोबाईल फ्रेंडली ४x५) */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-    width: 100%;
-    max-width: 360px;
-    height: 50vh;
-    padding: 30px;
-}
 
 /* ३D कार्ड डिझाईन */
 .card {
@@ -286,43 +337,3 @@ body, html {
     pointer-events: none;
 }
 
-/* --- MOBILE OVERLAP FIX --- */
-@media (max-width: 480px) {
-    #game-screen {
-        padding: 5px 0;
-    }
-    
-    .scoreboard {
-        width: 110px;
-        height: 50px;
-        z-index: 20;
-    }
-    
-    .top-scoreboard {
-        border-radius: 0 0 60px 60px;
-    }
-    
-    .bottom-scoreboard {
-        border-radius: 60px 60px 0 0;
-    }
-    
-    .score-digits {
-        font-size: 1.1rem;
-    }
-    
-    .player-name {
-        font-size: 0.75rem;
-    }
-    
-    .turn-text {
-        font-size: 0.95rem;
-        margin: 2px 0;
-    }
-    
-    /* मोबाईलवर उंची कमी असल्यामुळे ग्रिड अजून लहान आणि सुरक्षित केली */
-    .grid-container {
-        width: 85vw;
-        height: 50vh; /* कार्ड्स फक्त ५०% उंची घेतील, ज्यामुळे स्कोअरबोर्डला भरपूर जागा मिळेल */
-        gap: 5px;
-    }
-}
