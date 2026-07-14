@@ -95,7 +95,7 @@ body, html {
 .scoreboard {
     position: relative;
     width: 180px;
-    height: 60px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -142,12 +142,12 @@ body, html {
 
 /* टर्न इंडिकेटर ॲनिमेशन */
 .turn-text {
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    margin: 10px 0;
-    animation: pulse 1.5s infinite alternate;
+    margin: 7px 0;
+    animation: pulse 0.7s infinite alternate;
 }
 
 @keyframes pulse {
@@ -186,8 +186,8 @@ body, html {
     gap: 8px;
     width: 100%;
     max-width: 360px;
-    height: 60vh;
-    padding: 5px;
+    height: 50vh;
+    padding: 10px;
 }
 
 /* ३D कार्ड डिझाईन */
@@ -286,57 +286,43 @@ body, html {
     pointer-events: none;
 }
 
-/* --- RESPONSIVE DESIGN (FOR ALL SCREENS) --- */
-
-/* १. मोबाईल स्क्रीनसाठी (जेव्हा स्क्रीन लहान आणि उभी असते) */
+/* --- MOBILE OVERLAP FIX --- */
 @media (max-width: 480px) {
     #game-screen {
-        padding: 5px 0; /* मोबाईलवर वरची आणि खालची पॅडिंग एकदम कमी केली */
+        padding: 5px 0;
     }
-    .game-title {
-        font-size: 2.3rem;
-    }
-    .game-btn {
-        padding: 10px 25px;
-        font-size: 1rem;
-    }
+    
     .scoreboard {
         width: 110px;
         height: 50px;
-        position: relative; /* absolute वरून relative केले जेणेकरून ओव्हरलॅप होणारच नाही */
-        margin: 0 auto;
+        z-index: 20;
     }
+    
     .top-scoreboard {
         border-radius: 0 0 60px 60px;
     }
+    
     .bottom-scoreboard {
         border-radius: 60px 60px 0 0;
     }
+    
     .score-digits {
         font-size: 1.1rem;
     }
+    
     .player-name {
         font-size: 0.75rem;
     }
+    
     .turn-text {
         font-size: 0.95rem;
         margin: 2px 0;
     }
-    /* कार्ड्सची साईझ एकदम सुरक्षित केली जेणेकरून ती स्कोअरबोर्डला टच करणार नाहीत */
+    
+    /* मोबाईलवर उंची कमी असल्यामुळे ग्रिड अजून लहान आणि सुरक्षित केली */
     .grid-container {
-        width: 90vw;
-        height: 50vh; 
-        max-height: 340px; /* उंची अजून कमी केली जेणेकरून ओव्हरलॅपचा चान्सच नाही */
-        gap: 4px;
-        margin: auto 0; /* सेंटरला ठेवण्यासाठी */
-    }
-    .card-inner {
-        border-radius: 6px;
-    }
-    .win-message {
-        font-size: 1.8rem;
-    }
-    .points-text {
-        font-size: 1.2rem;
+        width: 85vw;
+        height: 50vh; /* कार्ड्स फक्त ५०% उंची घेतील, ज्यामुळे स्कोअरबोर्डला भरपूर जागा मिळेल */
+        gap: 5px;
     }
 }
