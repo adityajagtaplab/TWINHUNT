@@ -100,8 +100,8 @@ body, html {
 /* नवीन हाफ-सर्कुलर स्कोअरबोर्ड डिझाईन (कोपऱ्यांसाठी) */
 .scoreboard {
     position: relative;
-    width: 90px;
-    height: 75px;
+    width: 120px;
+    height: 100px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -141,17 +141,17 @@ body, html {
 }
 
 .score-digits {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 900;
     color: #ffd700;
 }
 
 .turn-text {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #fff;
     margin-top: 25px; /* मध्यभागी आणण्यासाठी */
-    animation: pulse 1.5s infinite alternate;
+    animation: pulse 0.5s infinite alternate;
 }
 
 /* ग्रिड आता खाली सुरक्षित राहील */
@@ -159,11 +159,11 @@ body, html {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-    width: 92%;
+    gap: 10px;
+    width: 95%;
     max-width: 360px;
     height: 65vh;
-    margin-top: 15px;
+    margin-top: 40px;
     margin-bottom: auto;
 }
 
@@ -245,7 +245,7 @@ body, html {
 .card {
     perspective: 1000px;
     cursor: pointer;
-    aspect-ratio: 3/4;
+    aspect-ratio: 9/16;
 }
 
 .card-inner {
@@ -253,7 +253,7 @@ body, html {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
@@ -286,8 +286,8 @@ body, html {
 }
 
 .card-front img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -301,7 +301,7 @@ body, html {
 
 .winner-content {
     text-align: center;
-    animation: zoomIn 0.5s ease-out forwards;
+    animation: zoomIn 0.8s ease-out forwards;
 }
 
 @keyframes zoomIn {
