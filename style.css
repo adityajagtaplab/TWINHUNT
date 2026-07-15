@@ -82,9 +82,9 @@ body, html {
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background2.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10px 0;
+    padding: 0;
 }
 
 /* हेडर लेआउट - डावीकडे, मध्यभागी आणि उजवीकडे सेट करण्यासाठी */
@@ -163,16 +163,15 @@ body, html {
     gap: 8px;
     width: 92%;
     max-width: 360px;
-    height: 60vh;
-    margin: auto 0;
-    margin-top: 35px;
+    height: 65vh;
+    margin-top: 10px;
     margin-bottom: auto;
 }
 
 /* --- MOBILE & LAPTOP RESPONSIVE FOR NEW LAYOUT --- */
 @media (max-width: 480px) {
     #game-screen {
-        padding: 5px 0;
+        padding: 0;
     }
    .game-header {
      height: 65px;
@@ -180,7 +179,7 @@ body, html {
     }
     .scoreboard {
         width: 80px;
-        height: 60px;
+        height: 55px;
     }
     .player-name {
         font-size: 0.75rem;
@@ -193,9 +192,12 @@ body, html {
         margin-top: 20px;
     }
     .grid-container {
-        height: 58vh;
+        width: 90vw
+        height: 68vh;
+        max-height: 460px;
         gap: 6px;
-        margin-top: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 }
 
@@ -210,10 +212,10 @@ body, html {
     }
     .left-scoreboard { border-radius: 0 0 100px 0; }
     .right-scoreboard { border-radius: 0 0 0 100px; }
-    .player-name { font-size: 1.1rem; }
-    .score-digits { font-size: 1.8rem; }
-    .turn-text { font-size: 1.6rem; margin-top: 30px; }
-    .grid-container { max-width: 420px; height: 62vh; }
+    .player-name { font-size: 0.80rem; }
+    .score-digits { font-size: 1.1rem; }
+    .turn-text { font-size: 1.0rem; margin-top: 10px; }
+    .grid-container { max-width: 420px; height: 60vh; }
 }
 
 
@@ -250,7 +252,7 @@ body, html {
 .card {
     perspective: 1000px;
     cursor: pointer;
-    aspect-ratio: 9/12;
+    aspect-ratio: 3/5;
 }
 
 .card-inner {
