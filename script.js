@@ -217,11 +217,11 @@ function endGame() {
         
         let resultMessage = "";
         if (p1Score > p2Score) {
-            resultMessage = `Player 1 Won<br><span class="points-text">by ${p1Score - p2Score} points</span>`;
+            resultMessage = `Player 1 Won 🎉<br><span class="points-text">by ${p1Score - p2Score} points!</span>`;
         } else if (p2Score > p1Score) {
-            resultMessage = `Player 2 Won<br><span class="points-text">by ${p2Score - p1Score} points</span>`;
+            resultMessage = `Player 2 Won 🎉<br><span class="points-text">by ${p2Score - p1Score} points!</span>`;
         } else {
-            resultMessage = `Game Tie!<br><span class="points-text">Both got ${p1Score} points</span>`;
+            resultMessage = `Game Tie 🤝<br><span class="points-text">Both got ${p1Score} points!</span>`;
         }
         
         document.getElementById('winner-text').innerHTML = resultMessage;
